@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{ meta }}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="https://www.statusquota.co/hubfs/NEW-FAVICON.png?t=1491764236064">
+    <script src="/static/bootstrap-4.0.0-alpha.6-dist/js/jquery.min.js"></script>
+    {% block additional_head %} {% endblock %}
+    </style>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-toggleable-md navbar-light navbar-inverse bg-inverse">
+  <div class="container">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/">Genric Webapp</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Nav Item1</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Nav Item2</a>
+      </li>
+      
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Nav Item3</a> 
+      </li>
+
+    </ul>
+    </ul>
+  </div>
+  </div>
+  </nav>
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div style="height: 15px;"></div>
+          <h2>{{title}}</h2>
+          <hr>
+
+        {% block body%} {% endblock%}
+
+
+        {{ data0 }}
+
+        {% if dict0 %}
+          <table class="table table-bordered table-hover">
+            {% for key in dict0 %}
+              <tr>
+                <td><b>{{ key }}</b></td> <td>{{ dict0[key] }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        {% endif %}
+
+        {% if list0 %}
+          <ul>
+          {% for i in list0 %}
+    
+              <li>{{ i }}</li>
+
+          {% endfor %}
+          </ul>
+        {% endif %}
+        
+        {% if table0 %}
+          <table class="table table-bordered table-hover">
+          {% for i in table0 %}
+            
+            {% set rowloop = loop %}
+            <tr>
+            {% if loop.first %}
+  
+              {% for j in i %}
+                <th>{{ j | replace('_', ' ') | title() }}</th>
+              {% endfor %}
+
+            {% else %}
+
+              {% for j in i %}
+                <td>{{ j }}</td>
+              {% endfor %}
+
+            {% endif %}
+
+            </tr>
+          {% endfor %}
+          </table>
+        {% endif %}
+
+
+
+        {{ data1 }}
+
+        {% if dict1 %}
+          <table class="table table-bordered table-hover">
+            {% for key in dict1 %}
+              <tr>
+                <td><b>{{ key }}</b></td> <td>{{ dict1[key] }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        {% endif %}
+
+        {% if list1 %}
+          <ul>
+          {% for i in list1 %}
+    
+              <li>{{ i }}</li>
+
+          {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if table1 %}
+          <table class="table table-bordered table-hover">
+          {% for i in table1 %}
+            
+            {% set rowloop = loop %}
+            <tr>
+            {% if loop.first %}
+  
+              {% for j in i %}
+                <th>{{ j | replace('_', ' ') | title()  }}</th>
+              {% endfor %}
+
+            {% else %}
+
+              {% for j in i %}
+                <td>{{ j }}</td>
+              {% endfor %}
+
+            {% endif %}
+
+            </tr>
+          {% endfor %}
+          </table>
+      {% endif %}
+
+
+        
+        {{ data2 }}
+
+        {{ data3 }}
+
+
+
+        {{ data4 }}
+
+        {{ data5 }}
+
+        {% if table2 %}
+          <table class="table table-bordered table-hover">
+          {% for i in table2 %}
+            
+            {% set rowloop = loop %}
+            <tr>
+            {% if loop.first %}
+  
+              {% for j in i %}
+                <th>{{ j | replace('_', ' ') | title() }}</th>
+              {% endfor %}
+
+            {% else %}
+
+              {% for j in i %}
+                <td>{{ j }}</td>
+              {% endfor %}
+
+            {% endif %}
+
+            </tr>
+          {% endfor %}
+          </table>
+        {% endif %}
+
+
+        </div><!-- end col-md-8 -->
+        </div><!-- end row -->
+      
+      <hr>
+      <footer>
+      &copy; Generic Webapp 
+      </footer>   
+      </div>
+
+    </body>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/static/bootstrap-4.0.0-alpha.6-dist/js/jquery-3.1.1.slim.min.js"></script>
+    <script src="/static/bootstrap-4.0.0-alpha.6-dist/js/tether.min.js"></script>
+    <script src="/static/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>
+</html>
