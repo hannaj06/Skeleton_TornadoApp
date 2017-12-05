@@ -26,5 +26,8 @@ def make_app():
 
 if __name__ == "__main__":
     app = make_app()
-    app.listen(8888)
+    port = 8888
+    app.listen(port)
+    line = '\n\n==========================================\n\n'
+    print('{0}Now running on 127.0.0.1:{1}{0}'.format(line, port))
     tornado.ioloop.IOLoop.current().start()
